@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Julianne Benedict Prado — Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav id="navbar">
+    <span class="nav-logo">JBP</span>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-bg-glow"></div>
+    <div class="hero-bg-glow2"></div>
+    <div class="hero-stage">
+      <p class="hero-tag">CS Student · Backend Enthusiast · University of Mindanao</p>
+
+      <div class="hero-photo-stage" aria-label="Profile portrait with name overlay">
+        <img src="469782125_1088912526108985_2030185589519466153_n-Photoroom.png" class="hero-photo" alt="Portrait of Julianne Benedict Prado" />
+
+        <h1 class="hero-name">
+          <span class="hero-name-line hero-name-top">Julianne</span>
+          <span class="hero-name-line hero-name-mid">Benedict Prado</span>
+        </h1>
+      </div>
+
+      <p class="hero-role">// Backend Developer · CS Student</p>
+
+      <p class="hero-bio">
+        A computer science student building a slow but steady path in software development —
+        with a growing passion for backend systems and a curiosity that never stops.
+      </p>
+
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-outline">Get in Touch</a>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <div class="scroll-line"></div>
+      <span>Scroll to explore</span>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-inner">
+      <div class="section-label">// Intro</div>
+      <div class="about-lead reveal">
+        <h2 class="about-display">I build <span class="about-accent">practical backend systems</span> with clear logic, clean structure, and <span class="about-accent">steady execution</span>.</h2>
+        <p class="about-support">
+          I focus on building real, reliable features that improve user flow while keeping the architecture maintainable and scalable.
+        </p>
+      </div>
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            I'm <strong>Julianne Benedict Prado</strong>, a Computer Science student at the
+            <strong>University of Mindanao</strong> with a genuine curiosity for how things work
+            under the hood.
+          </p>
+          <p>
+            My focus leans toward <strong>backend development</strong> — I'm drawn to the logic,
+            architecture, and problem-solving that power applications behind the scenes.
+            Every project I take on is a step toward deepening that understanding.
+          </p>
+          <p>
+            I believe in growing steadily and intentionally, building skills that last rather
+            than rushing the process. I'm always eager to learn something new, whether it's
+            a language, a framework, or a concept I haven't encountered before.
+          </p>
+        </div>
+        <div class="about-stats reveal">
+          <div class="stat-item">
+            <span class="stat-num">2+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">∞</span>
+            <span class="stat-label">Curiosity Level</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-num">Backend</span>
+            <span class="stat-label">Primary Focus Area</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-inner">
+      <div class="section-label">02 — Toolbox</div>
+      <h2 class="section-title reveal">Tools & Technologies</h2>
+      <p class="tools-lead reveal">
+        Technologies I rely on to build practical projects, from backend logic and data modeling
+        to interface structure and styling.
+      </p>
+
+      <div class="tools-filters reveal" role="toolbar" aria-label="Filter tools by category">
+        <button type="button" class="tools-filter-btn is-active" data-tools-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="tools-filter-btn" data-tools-filter="core" aria-pressed="false">Core</button>
+        <button type="button" class="tools-filter-btn" data-tools-filter="frontend" aria-pressed="false">Frontend</button>
+        <button type="button" class="tools-filter-btn" data-tools-filter="data" aria-pressed="false">Data</button>
+      </div>
+
+      <div class="tools-layout">
+        <article class="tool-band reveal" data-tools-category="core">
+          <p class="tool-band-kicker">Core</p>
+          <h3 class="tool-band-title">Programming Languages</h3>
+          <p class="tool-band-copy">The foundation for implementing logic, algorithms, and backend behavior.</p>
+          <ul class="tool-chips" aria-label="Programming languages">
+            <li class="tool-chip"><i class="devicon-java-plain colored" aria-hidden="true"></i><span>Java</span></li>
+            <li class="tool-chip"><i class="devicon-python-plain colored" aria-hidden="true"></i><span>Python</span></li>
+            <li class="tool-chip"><i class="devicon-php-plain colored" aria-hidden="true"></i><span>PHP</span></li>
+          </ul>
+        </article>
+
+        <article class="tool-band reveal" data-tools-category="frontend">
+          <p class="tool-band-kicker">Frontend</p>
+          <h3 class="tool-band-title">Web Foundations</h3>
+          <p class="tool-band-copy">Core structure and presentation for clean, responsive interfaces.</p>
+          <ul class="tool-chips" aria-label="Web technologies">
+            <li class="tool-chip"><i class="devicon-html5-plain colored" aria-hidden="true"></i><span>HTML</span></li>
+            <li class="tool-chip"><i class="devicon-css3-plain colored" aria-hidden="true"></i><span>CSS</span></li>
+          </ul>
+        </article>
+
+        <article class="tool-band reveal" data-tools-category="data">
+          <p class="tool-band-kicker">Data</p>
+          <h3 class="tool-band-title">Persistence Layer</h3>
+          <p class="tool-band-copy">Managing structured data and database-driven workflows.</p>
+          <ul class="tool-chips" aria-label="Data technologies">
+            <li class="tool-chip"><i class="devicon-mysql-plain colored" aria-hidden="true"></i><span>MySQL</span></li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-inner">
+      <div class="section-label">03 — Projects</div>
+      <h2 class="section-title reveal">Things I've Built</h2>
+      <div class="projects-grid">
+        <div class="project-card reveal" data-project-theme="passbirvae">
+          <div class="project-media" aria-hidden="true">
+            <span class="project-media-label">Cryptography Simulation</span>
+          </div>
+          <span class="project-num">001</span>
+          <h3 class="project-title">PASSBirvae Simulator</h3>
+          <p class="project-desc">
+            A functional simulator of a password algorithm based on research from the
+            University of Brasilia. Explores cryptographic concepts and translates
+            academic research into a working, interactive simulation.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Security</span>
+            <span class="tag">Algorithm</span>
+            <span class="tag">Simulation</span>
+          </div>
+          <a class="project-link" href="https://github.com/jbprado020/PASSBirvae-Simulator" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </div>
+
+        <div class="project-card reveal" data-project-theme="tracker">
+          <div class="project-media" aria-hidden="true">
+            <span class="project-media-label">Study Analytics GUI</span>
+          </div>
+          <span class="project-num">002</span>
+          <h3 class="project-title">Study Tracker GUI</h3>
+          <p class="project-desc">
+            A desktop app with a graphical interface that helps users track their study
+            sessions. Features visual representation of study data so learners can
+            monitor progress and stay consistent.
+          </p>
+          <div class="project-tags">
+            <span class="tag">GUI</span>
+            <span class="tag">Productivity</span>
+            <span class="tag">Data Viz</span>
+          </div>
+          <a class="project-link" href="https://github.com/jbprado020/StudyTracker" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </div>
+
+        <div class="project-card reveal" data-project-theme="rpg">
+          <div class="project-media" aria-hidden="true">
+            <span class="project-media-label">Turn-Based Combat Engine</span>
+          </div>
+          <span class="project-num">003</span>
+          <h3 class="project-title">RPG Battle System 1.2</h3>
+          <p class="project-desc">
+            A polished, feature-rich turn-based RPG battle system written in Python with
+            modular architecture. Features strategic combat, multiple enemy types, a leveling
+            system, status effects, special skills, and three difficulty modes.
+          </p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">OOP</span>
+            <span class="tag">Game Dev</span>
+            <span class="tag">Modular</span>
+          </div>
+          <a class="project-link" href="https://github.com/jbprado020/RPG-Battle-System-1.2" target="_blank" rel="noopener">
+            <i class="fa-brands fa-github"></i> View on GitHub
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="section-inner">
+      <div class="section-label">04 — Education</div>
+      <h2 class="section-title reveal">Academic Background</h2>
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <span class="timeline-date">Present</span>
+          <h3 class="timeline-title">Bachelor of Science in Computer Science</h3>
+          <p class="timeline-sub">University of Mindanao</p>
+          <p class="timeline-desc">
+            Pursuing a degree in Computer Science with a focus on software development
+            and backend systems. Actively working on projects that bridge academic
+            knowledge with real-world application.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="section-inner">
+      <div class="section-label">05 — Certifications</div>
+      <h2 class="section-title reveal">Credentials</h2>
+      <div class="cert-grid">
+
+        <div class="cert-card reveal">
+          <div class="cert-header">
+            <div class="cert-badge">ITS</div>
+            <div class="cert-issuer">
+              <span class="cert-org">Certiport</span>
+              <span class="cert-date">IT Specialist</span>
+            </div>
+          </div>
+          <h3 class="cert-title">IT Specialist — Java</h3>
+          <p class="cert-desc">
+            Industry-recognized certification validating foundational Java programming skills,
+            including object-oriented concepts, data structures, and core software development practices.
+          </p>
+          <div class="cert-tags">
+            <span class="tag">Java</span>
+            <span class="tag">OOP</span>
+            <span class="tag">Certiport</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="section-inner">
+      <div class="section-label">06 — Contact</div>
+      <h2 class="section-title reveal">Let's Connect</h2>
+      <div class="contact-layout">
+        <div class="reveal">
+          <p class="contact-intro">
+            Whether it's a collaboration, a question, or just a friendly hello —
+            I'd love to hear from you. I'm always open to learning from others
+            and exploring new opportunities.
+          </p>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:jbprado013@gmail.com">
+              <span class="contact-link-icon"><i class="fa-regular fa-envelope"></i></span>
+              <div class="contact-link-info">
+                <span class="contact-link-label">Electronic Mail</span>
+                <span class="contact-link-val">jbprado013@gmail.com</span>
+              </div>
+            </a>
+            <a class="contact-link" href="https://github.com/jbprado020" target="_blank" rel="noopener">
+              <span class="contact-link-icon"><i class="fa-brands fa-github"></i></span>
+              <div class="contact-link-info">
+                <span class="contact-link-label">GitHub</span>
+                <span class="contact-link-val">Julianne Benedict Prado</span>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="reveal">
+          <div class="contact-availability">
+            <p class="avail-title"><span class="avail-dot"></span> Currently Available</p>
+            <p class="avail-text">
+              Open to internships, collaborative projects, and learning opportunities.
+              Based in Mindanao, Philippines — happy to connect remotely.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Julianne Benedict Prado</p>
+    <p>Built with curiosity & care</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

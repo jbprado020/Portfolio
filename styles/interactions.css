@@ -1,0 +1,59 @@
+/* ---------------------------------------------
+   Hover Interactions (pointer devices)
+--------------------------------------------- */
+@media (hover: hover) and (pointer: fine) {
+  .tool-band:hover,
+  .project-card:hover,
+  .cert-card:hover,
+  .contact-link:hover,
+  .stat-item:hover {
+    transform: translateY(var(--lift-md));
+    border-color: rgba(167, 121, 74, 0.42);
+    background: var(--surface-hover);
+  }
+
+  .tool-band:hover::before,
+  .project-card:hover::before,
+  .cert-card:hover::before {
+    transform: scaleX(1);
+  }
+
+  .tool-band:hover::after,
+  .project-card:hover::after,
+  .cert-card:hover::after {
+    opacity: 0.7;
+    transform: translateY(0);
+    background-position: center, 10px 12px, -10px -12px;
+    animation: cardGridDrift 7.2s linear infinite;
+  }
+
+  .tool-chip:hover {
+    transform: translateY(var(--lift-sm));
+    border-color: rgba(167, 121, 74, 0.46);
+    background: rgba(167, 121, 74, 0.08);
+    color: var(--accent);
+  }
+
+  .project-card:hover .project-media::before {
+    transform: scale(1.07) translate3d(1.2%, -1.2%, 0);
+    filter: saturate(1.08) contrast(1.06);
+    opacity: 0.94;
+  }
+
+  .project-card:hover .project-media-label {
+    border-color: rgba(255, 255, 255, 0.52);
+    background: rgba(10, 14, 20, 0.4);
+  }
+
+  .tools-filter-btn:hover {
+    transform: translateY(var(--lift-sm));
+    color: var(--text);
+    border-color: rgba(167, 121, 74, 0.4);
+    background: rgba(167, 121, 74, 0.07);
+  }
+
+  #about .stat-item:hover {
+    border-color: rgba(167, 121, 74, 0.42);
+    background: var(--surface-hover);
+  }
+}

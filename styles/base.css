@@ -1,0 +1,268 @@
+/* ---------------------------------------------
+   Root + Base
+--------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bg: #f7f8fa;
+  --bg-soft: #ffffff;
+  --surface: #ffffff;
+  --surface-hover: #f5f7fa;
+  --line: #d8e0ea;
+  --line-strong: #c1cad6;
+
+  --text: #1f2430;
+  --muted: #596273;
+
+  --accent: #a7794a;
+  --accent-soft: #8f6640;
+  --success: #2f9a63;
+
+  --font-serif: "Cormorant Garamond", serif;
+  --font-sans: "Manrope", sans-serif;
+  --font-mono: "Space Mono", monospace;
+
+  --type-body: 0.94rem;
+  --type-meta: 0.64rem;
+  --tracking-meta: 0.11em;
+
+  --container: 1120px;
+  --ease-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 26px;
+  --shadow-soft: 0 14px 34px rgba(23, 30, 40, 0.08);
+  --motion-fast: 180ms;
+  --motion-base: 220ms;
+  --lift-sm: -1.5px;
+  --lift-md: -2.5px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(560px 420px at 8% 10%, rgba(167, 121, 74, 0.1), transparent 70%),
+    radial-gradient(620px 420px at 88% 85%, rgba(143, 102, 64, 0.08), transparent 75%),
+    linear-gradient(180deg, #fcfcfb 0%, #f7f8fa 48%, #f0f3f7 100%);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-weight: 400;
+  line-height: 1.62;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.14;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 300 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+::selection {
+  background: rgba(167, 121, 74, 0.22);
+  color: #1f2430;
+}
+
+section,
+footer {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* ---------------------------------------------
+   Navigation
+--------------------------------------------- */
+nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.15rem 3rem;
+  border-bottom: 1px solid transparent;
+  transition: border-color 220ms var(--ease-standard),
+              background-color 220ms var(--ease-standard),
+              backdrop-filter 220ms var(--ease-standard);
+}
+
+nav.scrolled {
+  border-color: var(--line);
+  background: rgba(252, 252, 251, 0.9);
+  box-shadow: 0 10px 28px rgba(24, 32, 43, 0.06);
+  backdrop-filter: blur(12px);
+}
+
+.nav-logo {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.nav-links a {
+  position: relative;
+  color: var(--muted);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color 180ms ease;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.42rem;
+  height: 1px;
+  background: var(--accent);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: transform 220ms var(--ease-standard);
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+
+/* ---------------------------------------------
+   Buttons
+--------------------------------------------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  padding: 0.84rem 1.62rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  transition: transform var(--motion-base) var(--ease-standard),
+              color var(--motion-base) var(--ease-standard),
+              border-color var(--motion-base) var(--ease-standard),
+              background-color var(--motion-base) var(--ease-standard),
+              box-shadow var(--motion-base) var(--ease-standard);
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.btn-primary:hover {
+  transform: translateY(var(--lift-md));
+  background: #b18455;
+  border-color: #b18455;
+  box-shadow: 0 12px 26px rgba(167, 121, 74, 0.2);
+}
+
+.btn-outline {
+  color: var(--text);
+  border-color: var(--line);
+  background: rgba(167, 121, 74, 0.04);
+}
+
+.btn-outline:hover {
+  transform: translateY(var(--lift-md));
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(167, 121, 74, 0.1);
+}
+
+
+/* ---------------------------------------------
+   Shared Section Styles
+--------------------------------------------- */
+.section-inner {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 6.6rem 3rem;
+}
+
+.section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.95rem;
+  margin-bottom: 0.9rem;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.67rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.section-label::after {
+  content: "";
+  width: 64px;
+  height: 1px;
+  background: rgba(167, 121, 74, 0.35);
+}
+
+.section-title {
+  margin-bottom: 2.45rem;
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.015em;
+}
+
+#about,
+#skills,
+#projects,
+#education,
+#certifications,
+#contact {
+  border-top: 1px solid var(--line);
+}
+
+#projects,
+#certifications {
+  background: rgba(255, 255, 255, 0.56);
+}
+
+#skills,
+#education,
+#contact {
+  background: rgba(245, 247, 250, 0.64);
+}
