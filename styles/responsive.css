@@ -85,6 +85,11 @@
   .project-media {
     height: 114px;
   }
+
+  .project-case-item {
+    grid-template-columns: 1fr;
+    gap: 0.32rem;
+  }
 }
 
 @media (max-width: 760px) {
@@ -214,6 +219,33 @@
     left: 0.6rem;
     bottom: 0.56rem;
     font-size: 0.53rem;
+  }
+
+  .project-actions {
+    gap: 0.42rem;
+  }
+
+  .project-actions .project-link {
+    font-size: 0.59rem;
+    padding: 0.48rem 0.78rem;
+  }
+
+  .project-case {
+    margin-top: 0.88rem;
+    gap: 0.42rem;
+  }
+
+  .project-case-item {
+    padding: 0.44rem 0.52rem;
+    border-radius: 9px;
+  }
+
+  .project-case-key {
+    font-size: 0.54rem;
+  }
+
+  .project-case-value {
+    font-size: 0.79rem;
   }
 
   footer {

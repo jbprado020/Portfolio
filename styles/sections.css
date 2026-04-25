@@ -361,6 +361,38 @@
   line-height: 1.86;
 }
 
+.project-case {
+  margin-top: 1rem;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.project-case-item {
+  display: grid;
+  grid-template-columns: minmax(84px, auto) 1fr;
+  gap: 0.62rem;
+  align-items: start;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid rgba(200, 208, 219, 0.75);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.project-case-key {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.project-case-value {
+  color: var(--muted);
+  font-size: 0.82rem;
+  line-height: 1.62;
+}
+
 .project-tags,
 .cert-tags {
   margin-top: 1.4rem;
@@ -395,6 +427,26 @@
   transition: color 200ms var(--ease-standard),
               border-color 200ms var(--ease-standard),
               background-color 200ms var(--ease-standard);
+}
+
+.project-actions {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.52rem;
+}
+
+.project-actions .project-link {
+  margin-top: 0;
+}
+
+.project-link-disabled {
+  border-style: dashed;
+  color: rgba(89, 98, 115, 0.84);
+  background: rgba(167, 121, 74, 0.04);
+  cursor: default;
+  opacity: 0.92;
 }
 
 .project-link:hover {
