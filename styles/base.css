@@ -109,6 +109,70 @@ nav.scrolled {
   backdrop-filter: blur(12px);
 }
 
+.scroll-rail {
+  position: fixed;
+  right: 1.1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 980;
+  display: grid;
+  grid-template-columns: 2px auto;
+  align-items: center;
+  gap: 0.58rem;
+}
+
+.scroll-rail-track {
+  position: relative;
+  width: 2px;
+  height: 196px;
+  border-radius: 999px;
+  background: rgba(193, 202, 214, 0.7);
+  overflow: hidden;
+}
+
+.scroll-rail-progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  transform-origin: bottom;
+  transform: scaleY(0);
+  border-radius: inherit;
+  background: linear-gradient(180deg, rgba(167, 121, 74, 0.28), rgba(167, 121, 74, 0.84));
+  transition: transform var(--motion-fast) linear;
+}
+
+.scroll-rail-nav {
+  display: grid;
+  gap: 0.66rem;
+}
+
+.scroll-rail-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 1px solid rgba(167, 121, 74, 0.42);
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 3px 10px rgba(21, 29, 40, 0.08);
+  transition: transform var(--motion-fast) var(--ease-standard),
+              background-color var(--motion-fast) var(--ease-standard),
+              border-color var(--motion-fast) var(--ease-standard),
+              box-shadow var(--motion-fast) var(--ease-standard);
+}
+
+.scroll-rail-dot.is-active {
+  transform: scale(1.2);
+  border-color: rgba(167, 121, 74, 0.88);
+  background: rgba(167, 121, 74, 0.84);
+  box-shadow: 0 5px 14px rgba(167, 121, 74, 0.28);
+}
+
+.scroll-rail-dot:hover {
+  transform: scale(1.14);
+  border-color: rgba(167, 121, 74, 0.72);
+}
+
 .nav-logo {
   font-family: var(--font-mono);
   font-size: 0.72rem;

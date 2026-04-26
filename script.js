@@ -3,6 +3,8 @@
 --------------------------------------------- */
 const navbar = document.getElementById("navbar");
 const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
+const railDots = Array.from(document.querySelectorAll(".scroll-rail-dot"));
+const railProgress = document.getElementById("scrollRailProgress");
 
 const setNavbarState = () => {
   if (!navbar) {
@@ -31,7 +33,26 @@ const setActiveNav = (sectionId) => {
     const isActive = link.getAttribute("href") === `#${sectionId}`;
     link.classList.toggle("active", isActive);
   });
+
+  railDots.forEach((dot) => {
+    const isActive = dot.dataset.railTarget === sectionId;
+    dot.classList.toggle("is-active", isActive);
+  });
 };
+
+const setScrollRailProgress = () => {
+  if (!railProgress) {
+    return;
+  }
+
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const ratio = scrollable > 0 ? Math.min(Math.max(window.scrollY / scrollable, 0), 1) : 0;
+  railProgress.style.transform = `scaleY(${ratio.toFixed(4)})`;
+};
+
+setScrollRailProgress();
+window.addEventListener("scroll", setScrollRailProgress);
+window.addEventListener("resize", setScrollRailProgress);
 
 if (navSections.length) {
   const sectionObserver = new IntersectionObserver(

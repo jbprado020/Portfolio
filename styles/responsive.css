@@ -2,6 +2,10 @@
    Responsive
 --------------------------------------------- */
 @media (max-width: 1024px) {
+  .scroll-rail {
+    display: none;
+  }
+
   .hero-photo-stage {
     width: min(100%, 850px);
     aspect-ratio: 7 / 5;
