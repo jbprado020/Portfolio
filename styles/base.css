@@ -44,6 +44,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 6.25rem;
 }
 
 body {
@@ -80,6 +81,42 @@ section,
 footer {
   position: relative;
   z-index: 1;
+}
+
+section {
+  scroll-margin-top: 6.25rem;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgba(167, 121, 74, 0.9);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  z-index: 2000;
+  padding: 0.7rem 1rem;
+  border: 1px solid rgba(200, 208, 219, 0.92);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--text);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-decoration: none;
+  text-transform: uppercase;
+  transform: translateY(-180%);
+  transition: transform var(--motion-fast) var(--ease-standard),
+              box-shadow var(--motion-fast) var(--ease-standard),
+              border-color var(--motion-fast) var(--ease-standard);
+  box-shadow: 0 10px 22px rgba(21, 29, 40, 0.08);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
 }
 
 
@@ -173,6 +210,10 @@ nav.scrolled {
   border-color: rgba(167, 121, 74, 0.72);
 }
 
+.scroll-rail-dot:focus-visible {
+  transform: scale(1.18);
+}
+
 .nav-logo {
   font-family: var(--font-mono);
   font-size: 0.72rem;
@@ -199,6 +240,14 @@ nav.scrolled {
   transition: color 180ms ease;
 }
 
+.nav-links a:focus-visible,
+.btn:focus-visible,
+.project-link:focus-visible,
+.tools-filter-btn:focus-visible,
+.scroll-rail-dot:focus-visible {
+  box-shadow: 0 0 0 3px rgba(167, 121, 74, 0.18);
+}
+
 .nav-links a::after {
   content: "";
   position: absolute;
@@ -219,6 +268,10 @@ nav.scrolled {
 
 .nav-links a:hover::after,
 .nav-links a.active::after {
+  transform: scaleX(1);
+}
+
+.nav-links a:focus-visible::after {
   transform: scaleX(1);
 }
 

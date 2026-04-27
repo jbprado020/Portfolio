@@ -56,6 +56,10 @@
               box-shadow var(--motion-fast) var(--ease-standard);
 }
 
+.tools-filter-btn:focus-visible {
+  transform: translateY(var(--lift-sm));
+}
+
 .tools-filter-btn.is-active {
   color: var(--accent);
   border-color: rgba(167, 121, 74, 0.52);
@@ -429,6 +433,12 @@
               background-color 200ms var(--ease-standard);
 }
 
+.project-link:focus-visible {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: rgba(167, 121, 74, 0.08);
+}
+
 .project-actions {
   margin-top: 1rem;
   display: flex;
@@ -447,6 +457,10 @@
   background: rgba(167, 121, 74, 0.04);
   cursor: default;
   opacity: 0.92;
+}
+
+.project-link-disabled:focus-visible {
+  box-shadow: none;
 }
 
 .project-link:hover {
