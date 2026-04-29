@@ -2,13 +2,13 @@
    Skills
 --------------------------------------------- */
 #skills {
-  overflow: hidden;
+  overflow: visible;
 }
 
 #skills::before {
   content: "";
   position: absolute;
-  inset: 8% 3% 6%;
+  inset: 8% 3% 4%;
   z-index: 0;
   border-radius: 24px;
   background:
