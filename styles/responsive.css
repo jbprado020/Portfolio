@@ -97,7 +97,44 @@
 }
 
 @media (max-width: 760px) {
+  nav {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.55rem;
+  }
+
+  .nav-logo {
+    font-size: 0.64rem;
+    letter-spacing: 0.16em;
+  }
+
   .nav-links {
+    display: flex;
+    width: 100%;
+    gap: 0.46rem;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-links li {
+    flex: 0 0 auto;
+  }
+
+  .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    border: 1px solid rgba(193, 202, 214, 0.74);
+    background: rgba(255, 255, 255, 0.84);
+    border-radius: 999px;
+    padding: 0.34rem 0.56rem;
+    font-size: 0.56rem;
+    letter-spacing: 0.1em;
+    white-space: nowrap;
+  }
+
+  .nav-links a::after {
     display: none;
   }
 
