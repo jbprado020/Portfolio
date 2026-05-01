@@ -22,6 +22,20 @@
   text-align: center;
 }
 
+/* After split — align bottom content left without moving the split container */
+.hero-stage.split-done .hero-tag,
+.hero-stage.split-done .hero-role,
+.hero-stage.split-done .hero-bio {
+  text-align: left;
+  align-self: flex-start;
+  padding-left: 0;
+}
+
+.hero-stage.split-done .hero-cta {
+  align-self: flex-start;
+  justify-content: flex-start;
+}
+
 .hero-bg-glow,
 .hero-bg-glow2 {
   pointer-events: none;
@@ -54,6 +68,8 @@
   text-transform: uppercase;
   opacity: 0;
   animation: fadeUp 620ms var(--ease-standard) forwards 140ms;
+  transition: text-align 700ms var(--ease-standard),
+              align-self 700ms var(--ease-standard);
 }
 
 /* ---------------------------------------------
@@ -191,21 +207,21 @@
   letter-spacing: 0.17em;
   text-transform: uppercase;
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 600ms var(--ease-standard),
-              transform 600ms var(--ease-standard);
+  transform: translateY(10px) translateX(0);
+  transition: opacity 700ms var(--ease-standard),
+              transform 700ms var(--ease-standard);
 }
 
 .hero-bio {
-  max-width: 620px;
+  max-width: 520px;
   margin-top: 1.35rem;
   color: rgba(255, 255, 255, 0.52);
   font-size: 0.95rem;
   line-height: 1.8;
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 600ms var(--ease-standard) 80ms,
-              transform 600ms var(--ease-standard) 80ms;
+  transform: translateY(10px) translateX(0);
+  transition: opacity 700ms var(--ease-standard) 80ms,
+              transform 700ms var(--ease-standard) 80ms;
 }
 
 .hero-cta {
@@ -213,9 +229,9 @@
   display: flex;
   gap: 0.95rem;
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 600ms var(--ease-standard) 160ms,
-              transform 600ms var(--ease-standard) 160ms;
+  transform: translateY(10px) translateX(0);
+  transition: opacity 700ms var(--ease-standard) 160ms,
+              transform 700ms var(--ease-standard) 160ms;
 }
 
 /* Reveal bottom elements once split is done */
@@ -223,7 +239,7 @@
 .hero-stage.split-done .hero-bio,
 .hero-stage.split-done .hero-cta {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) translateX(0);
 }
 
 /* Gradient bridge — dark hero fading into light about section */

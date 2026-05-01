@@ -85,6 +85,7 @@
   overflow: hidden;
   --fx-x: 50%;
   --fx-y: 0%;
+  --tools-stagger: 0ms;
   grid-column: span 12;
   background: rgba(255, 255, 255, 0.82);
   border: 1px solid rgba(200, 208, 219, 0.94);
@@ -95,16 +96,15 @@
   transition: transform var(--motion-base) var(--ease-standard),
               opacity var(--motion-base) var(--ease-standard),
               border-color var(--motion-base) var(--ease-standard),
-              background-color var(--motion-base) var(--ease-standard);
+              background-color var(--motion-base) var(--ease-standard),
+              box-shadow var(--motion-base) var(--ease-standard);
+  transition-delay: var(--tools-stagger);
 }
 
 .tool-band.is-filter-out {
   opacity: 0;
-  transform: translateY(10px) scale(0.986);
-}
-
-.tool-band.is-filter-in {
-  animation: toolBandFilterIn 320ms var(--ease-standard);
+  transform: translateY(14px) scale(0.975);
+  pointer-events: none;
 }
 
 .tool-band:nth-child(1) {

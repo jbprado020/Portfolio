@@ -344,7 +344,7 @@ nav.scrolled {
 }
 
 .btn-outline {
-  color: var(--text);
+  color: #ffffff;
   border-color: var(--line);
   background: rgba(167, 121, 74, 0.04);
 }

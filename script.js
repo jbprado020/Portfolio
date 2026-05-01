@@ -152,8 +152,9 @@ if (canHover && !reducedMotion) {
    Tools filtering
 --------------------------------------------- */
 if (toolsFilterButtons.length && toolBands.length) {
-  const filterHideDurationMs = reducedMotion ? 0 : 180;
-  const filterInClassDurationMs = reducedMotion ? 0 : 330;
+  const filterHideDurationMs = reducedMotion ? 0 : 260;
+  const filterStaggerMs = reducedMotion ? 0 : 60;
+  let activeToolsFilterRequest = 0;
 
   const setActiveToolsFilterButton = (activeFilter) => {
     toolsFilterButtons.forEach((button) => {
@@ -164,36 +165,59 @@ if (toolsFilterButtons.length && toolBands.length) {
   };
 
   const applyToolsFilter = (filterKey) => {
-    toolBands.forEach((band) => {
+    const filterRequestId = ++activeToolsFilterRequest;
+
+    toolBands.forEach((band, index) => {
       const category = band.dataset.toolsCategory;
       const shouldShow = filterKey === "all" || category === filterKey;
+      const staggerDelay = `${index * filterStaggerMs}ms`;
+
+      band.style.setProperty("--tools-stagger", staggerDelay);
 
       if (shouldShow) {
-        band.hidden = false;
+        if (band.hidden) {
+          band.hidden = false;
+        }
         band.classList.remove("is-filter-out");
 
         if (!reducedMotion) {
-          band.classList.remove("is-filter-in");
-          // Force reflow so repeated clicks can retrigger entry animation.
+          band.classList.add("is-filter-out");
           void band.offsetWidth;
-          band.classList.add("is-filter-in");
-          window.setTimeout(() => {
-            band.classList.remove("is-filter-in");
-          }, filterInClassDurationMs);
+          window.requestAnimationFrame(() => {
+            if (filterRequestId === activeToolsFilterRequest) {
+              band.classList.remove("is-filter-out");
+            }
+          });
         }
       } else {
-        band.classList.remove("is-filter-in");
-
         if (reducedMotion) {
           band.hidden = true;
           return;
         }
 
         band.classList.add("is-filter-out");
-        window.setTimeout(() => {
+
+        const hideAfterTransition = (event) => {
+          if (event.propertyName !== "opacity") {
+            return;
+          }
+
+          if (filterRequestId !== activeToolsFilterRequest) {
+            band.removeEventListener("transitionend", hideAfterTransition);
+            return;
+          }
+
           band.hidden = true;
-          band.classList.remove("is-filter-out");
-        }, filterHideDurationMs);
+          band.removeEventListener("transitionend", hideAfterTransition);
+        };
+
+        band.addEventListener("transitionend", hideAfterTransition);
+
+        window.setTimeout(() => {
+          if (filterRequestId === activeToolsFilterRequest && !band.hidden) {
+            band.hidden = true;
+          }
+        }, filterHideDurationMs + (index * filterStaggerMs));
       }
     });
   };
