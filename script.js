@@ -5,13 +5,18 @@ const navbar = document.getElementById("navbar");
 const navLinks = Array.from(document.querySelectorAll(".nav-links a"));
 const railDots = Array.from(document.querySelectorAll(".scroll-rail-dot"));
 const railProgress = document.getElementById("scrollRailProgress");
+const heroSection = document.getElementById("home");
 
 const setNavbarState = () => {
-  if (!navbar) {
-    return;
-  }
+  if (!navbar) return;
 
-  navbar.classList.toggle("scrolled", window.scrollY > 50);
+  const scrolled = window.scrollY > 50;
+  navbar.classList.toggle("scrolled", scrolled);
+
+  if (heroSection) {
+    const heroBottom = heroSection.getBoundingClientRect().bottom;
+    navbar.classList.toggle("over-dark", heroBottom > 0 && !scrolled);
+  }
 };
 
 setNavbarState();
@@ -245,4 +250,22 @@ if (reducedMotion) {
   revealElements.forEach((element) => {
     revealObserver.observe(element);
   });
+}
+
+/* ---------------------------------------------
+   Hero split animation — triggers after 2.5s
+--------------------------------------------- */
+const heroSplit = document.getElementById("heroSplit");
+const heroStage = document.querySelector(".hero-stage");
+
+if (heroSplit && !reducedMotion) {
+  window.setTimeout(() => {
+    heroSplit.classList.add("is-split");
+    // Fade in bottom elements after split transition completes (1.1s)
+    window.setTimeout(() => {
+      if (heroStage) heroStage.classList.add("split-done");
+    }, 1100);
+  }, 2500);
+} else if (heroStage) {
+  heroStage.classList.add("split-done");
 }

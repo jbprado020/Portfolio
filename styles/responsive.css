@@ -67,9 +67,16 @@
   }
 
   .projects-grid,
-  .cert-grid,
   .skills-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cert-card--soon {
+    min-height: auto;
   }
 
   .tools-layout {
@@ -97,6 +104,14 @@
 }
 
 @media (max-width: 760px) {
+  .hero-split.is-split .hero-name {
+    transform: translateX(-18%);
+  }
+
+  .hero-split.is-split .hero-photo-stage {
+    transform: translateX(18%);
+  }
+
   nav {
     align-items: flex-start;
     flex-direction: column;

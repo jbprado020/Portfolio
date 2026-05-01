@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
   <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Manrope:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
@@ -72,13 +72,14 @@
     <div class="hero-stage">
       <p class="hero-tag">CS Student · Backend Enthusiast · University of Mindanao</p>
 
-      <div class="hero-photo-stage" aria-label="Profile portrait with name overlay">
-        <img src="469782125_1088912526108985_2030185589519466153_n-Photoroom.png" class="hero-photo" alt="Portrait of Julianne Benedict Prado" loading="eager" decoding="async" fetchpriority="high" />
-
+      <div class="hero-split" id="heroSplit" aria-label="Profile portrait and name">
         <h1 class="hero-name">
           <span class="hero-name-line hero-name-top">Julianne</span>
           <span class="hero-name-line hero-name-mid">Benedict Prado</span>
         </h1>
+        <div class="hero-photo-stage">
+          <img src="469782125_1088912526108985_2030185589519466153_n-Photoroom.png" class="hero-photo" alt="Portrait of Julianne Benedict Prado" loading="eager" decoding="async" fetchpriority="high" />
+        </div>
       </div>
 
       <p class="hero-role">// Backend Developer · CS Student</p>
@@ -148,6 +149,7 @@
 
   <!-- SKILLS -->
   <section id="skills">
+    <div class="skills-panel" aria-hidden="true"></div>
     <div class="section-inner">
       <div class="section-label">02 — Toolbox</div>
       <h2 class="section-title reveal">Tools & Technologies</h2>
