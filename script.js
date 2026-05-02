@@ -281,6 +281,25 @@ if (reducedMotion) {
 --------------------------------------------- */
 const heroSplit = document.getElementById("heroSplit");
 const heroStage = document.querySelector(".hero-stage");
+const heroRole = document.getElementById("heroRole");
+
+const typeText = (element, text, speed = 38) => {
+  if (!element) return;
+  element.textContent = "";
+  element.classList.add("is-typing");
+
+  let i = 0;
+  const tick = () => {
+    if (i < text.length) {
+      element.textContent = text.slice(0, ++i);
+      window.setTimeout(tick, speed);
+    } else {
+      element.classList.remove("is-typing");
+      element.classList.add("typed-done");
+    }
+  };
+  tick();
+};
 
 if (heroSplit && !reducedMotion) {
   window.setTimeout(() => {
@@ -288,8 +307,13 @@ if (heroSplit && !reducedMotion) {
     // Fade in bottom elements after split transition completes (1.1s)
     window.setTimeout(() => {
       if (heroStage) heroStage.classList.add("split-done");
+      // Start typing after a short delay once elements are visible
+      window.setTimeout(() => {
+        typeText(heroRole, "// Backend Developer · CS Student");
+      }, 200);
     }, 1100);
   }, 2500);
 } else if (heroStage) {
   heroStage.classList.add("split-done");
+  if (heroRole) heroRole.textContent = "// Backend Developer · CS Student";
 }

@@ -242,6 +242,19 @@
   transform: translateY(0) translateX(0);
 }
 
+/* Typing cursor */
+.hero-role.is-typing::after {
+  content: "|";
+  display: inline-block;
+  margin-left: 2px;
+  color: var(--accent);
+  animation: cursorBlink 530ms step-end infinite;
+}
+
+.hero-role.typed-done::after {
+  display: none;
+}
+
 /* Gradient bridge — dark hero fading into light about section */
 .hero::after {
   content: "";
