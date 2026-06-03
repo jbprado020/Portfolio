@@ -340,4 +340,15 @@
     opacity: 1;
     transform: none;
   }
+
+  .cert-modal.is-open .cert-modal-wrap,
+  .cert-modal.is-open .cert-modal-image img,
+  .cert-modal.is-open .cert-modal-header,
+  .cert-modal.is-open .cert-modal-title,
+  .cert-modal.is-open .cert-modal-desc,
+  .cert-modal.is-open .cert-modal-meta,
+  .cert-modal.is-open .cert-modal-tags {
+    opacity: 1;
+    transform: none;
+  }
 }

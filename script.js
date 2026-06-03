@@ -317,3 +317,83 @@ if (heroSplit && !reducedMotion) {
   heroStage.classList.add("split-done");
   if (heroRole) heroRole.textContent = "// Backend Developer · CS Student";
 }
+
+
+/* ---------------------------------------------
+   Certificate modal
+--------------------------------------------- */
+const certModal = document.getElementById("certModal");
+
+if (certModal) {
+  const modalOverlay = certModal.querySelector(".cert-modal-overlay");
+  const modalClose = certModal.querySelector(".cert-modal-close");
+  const modalWrap = certModal.querySelector(".cert-modal-wrap");
+  const modalImage = certModal.querySelector(".cert-modal-image");
+  const modalHeader = certModal.querySelector(".cert-modal-header");
+  const modalTitle = certModal.querySelector(".cert-modal-title");
+  const modalDesc = certModal.querySelector(".cert-modal-desc");
+  const modalMeta = certModal.querySelector(".cert-modal-meta");
+  const modalTags = certModal.querySelector(".cert-modal-tags");
+
+  const openModal = (card) => {
+    const img = card.querySelector(".cert-image img");
+    if (img) {
+      modalImage.innerHTML = `<img src="${img.src}" alt="${img.alt}" />`;
+    } else {
+      modalImage.innerHTML = "";
+    }
+
+    const badge = card.querySelector(".cert-badge");
+    const org = card.querySelector(".cert-org");
+    const date = card.querySelector(".cert-date");
+    const title = card.querySelector(".cert-title");
+    const desc = card.querySelector(".cert-desc");
+    const credId = card.querySelector(".cert-id strong");
+    const verifyLink = card.querySelector(".cert-verify");
+    const tags = card.querySelectorAll(".tag");
+
+    modalHeader.innerHTML =
+      (badge ? badge.outerHTML : "") +
+      `<div class="cert-issuer">${org ? org.outerHTML : ""}${date ? date.outerHTML : ""}</div>`;
+
+    modalTitle.textContent = title ? title.textContent : "";
+    modalDesc.textContent = desc ? desc.textContent : "";
+
+    let metaHtml = "";
+    if (credId) {
+      const clone = credId.closest(".cert-id").cloneNode(true);
+      metaHtml += clone.outerHTML;
+    }
+    if (verifyLink) {
+      const clone = verifyLink.cloneNode(true);
+      metaHtml += clone.outerHTML;
+    }
+    modalMeta.innerHTML = metaHtml;
+
+    modalTags.innerHTML = "";
+    tags.forEach((tag) => {
+      modalTags.appendChild(tag.cloneNode(true));
+    });
+
+    certModal.classList.add("is-open");
+    document.body.classList.add("modal-open");
+  };
+
+  const closeModal = () => {
+    certModal.classList.remove("is-open");
+    document.body.classList.remove("modal-open");
+  };
+
+  document.querySelectorAll(".cert-card--featured").forEach((card) => {
+    card.addEventListener("click", () => openModal(card));
+  });
+
+  modalClose.addEventListener("click", closeModal);
+  modalOverlay.addEventListener("click", closeModal);
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && certModal.classList.contains("is-open")) {
+      closeModal();
+    }
+  });
+}
