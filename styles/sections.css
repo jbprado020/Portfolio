@@ -551,7 +551,7 @@
 --------------------------------------------- */
 .cert-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.3rem;
   align-items: start;
 }
@@ -584,6 +584,65 @@
   transform: scaleX(0);
   transform-origin: center;
   transition: transform 260ms var(--ease-standard);
+}
+
+.cert-image {
+  margin: -0.95rem -0.95rem 1.22rem;
+  border-radius: 12px;
+  border: 1px solid rgba(200, 208, 219, 0.82);
+  overflow: hidden;
+  background: rgba(244, 247, 252, 0.6);
+}
+
+.cert-image img {
+  width: 100%;
+  display: block;
+}
+
+.cert-meta {
+  margin-top: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.cert-id {
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.06em;
+}
+
+.cert-id strong {
+  color: var(--text);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+}
+
+.cert-verify {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--line);
+  color: var(--muted);
+  text-decoration: none;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.45rem 0.72rem;
+  transition: color 200ms var(--ease-standard),
+              border-color 200ms var(--ease-standard),
+              background-color 200ms var(--ease-standard);
+}
+
+.cert-verify:focus-visible,
+.cert-verify:hover {
+  color: var(--accent);
+  border-color: rgba(167, 121, 74, 0.52);
+  background: rgba(167, 121, 74, 0.08);
 }
 
 .cert-header {
