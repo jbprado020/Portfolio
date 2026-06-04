@@ -41,6 +41,11 @@
   <!-- NAV -->
   <nav id="navbar">
     <span class="nav-logo">JBP</span>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#skills">Skills</a></li>
@@ -426,6 +431,23 @@
               </div>
             </a>
           </div>
+
+          <form class="contact-form" id="contactForm">
+            <div class="contact-form-field">
+              <label for="formName" class="contact-form-label">Name</label>
+              <input type="text" id="formName" class="contact-form-input" required placeholder="Your name" />
+            </div>
+            <div class="contact-form-field">
+              <label for="formEmail" class="contact-form-label">Email</label>
+              <input type="email" id="formEmail" class="contact-form-input" required placeholder="your@email.com" />
+            </div>
+            <div class="contact-form-field">
+              <label for="formMessage" class="contact-form-label">Message</label>
+              <textarea id="formMessage" class="contact-form-input contact-form-textarea" required placeholder="What's on your mind?" rows="4"></textarea>
+            </div>
+            <button type="submit" class="contact-form-submit btn btn-primary">Send Message</button>
+            <p class="contact-form-feedback" id="formFeedback"></p>
+          </form>
         </div>
         <div class="reveal">
           <div class="contact-availability">

@@ -34,10 +34,6 @@
     padding: 1rem 1.5rem;
   }
 
-  .nav-links {
-    gap: 1.25rem;
-  }
-
   .hero,
   .section-inner,
   footer {
@@ -116,9 +112,8 @@
   }
 
   nav {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 0.55rem;
+    flex-wrap: wrap;
+    padding: 0.85rem 1.5rem;
   }
 
   .nav-logo {
@@ -126,30 +121,47 @@
     letter-spacing: 0.16em;
   }
 
-  .nav-links {
+  .nav-toggle {
     display: flex;
-    width: 100%;
-    gap: 0.46rem;
-    overflow-x: auto;
-    padding-bottom: 0.25rem;
-    scrollbar-width: thin;
-    -webkit-overflow-scrolling: touch;
   }
 
-  .nav-links li {
-    flex: 0 0 auto;
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.4rem;
+    padding: 0.85rem 0 0.2rem;
+    border-top: 1px solid var(--line);
+    margin-top: 0.4rem;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  nav.over-dark .nav-links {
+    border-top-color: rgba(255, 255, 255, 0.12);
   }
 
   .nav-links a {
-    display: inline-flex;
-    align-items: center;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    border-radius: 999px;
     border: 1px solid rgba(193, 202, 214, 0.74);
     background: rgba(255, 255, 255, 0.84);
-    border-radius: 999px;
-    padding: 0.34rem 0.56rem;
-    font-size: 0.56rem;
-    letter-spacing: 0.1em;
-    white-space: nowrap;
+  }
+
+  nav.over-dark .nav-links a {
+    border-color: rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  nav.over-dark .nav-links a:hover,
+  nav.over-dark .nav-links a.active {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
   }
 
   .nav-links a::after {

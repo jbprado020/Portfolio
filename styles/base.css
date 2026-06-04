@@ -307,6 +307,61 @@ nav.scrolled {
 
 
 /* ---------------------------------------------
+   Nav toggle (hamburger)
+--------------------------------------------- */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 8px;
+  transition: background 180ms var(--ease-standard);
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid rgba(167, 121, 74, 0.9);
+  outline-offset: 3px;
+}
+
+.nav-toggle-bar {
+  display: block;
+  width: 20px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--muted);
+  transition: transform 280ms var(--ease-standard),
+              opacity 280ms var(--ease-standard);
+}
+
+nav.over-dark .nav-toggle-bar {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+nav.over-dark .nav-toggle:hover .nav-toggle-bar {
+  background: rgba(255, 255, 255, 0.8);
+}
+
+.nav-toggle.is-active .nav-toggle-bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.nav-toggle.is-active .nav-toggle-bar:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-active .nav-toggle-bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+
+/* ---------------------------------------------
    Buttons
 --------------------------------------------- */
 .btn {

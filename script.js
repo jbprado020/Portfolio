@@ -397,3 +397,69 @@ if (certModal) {
     }
   });
 }
+
+
+/* ---------------------------------------------
+   Nav toggle (hamburger)
+--------------------------------------------- */
+const navToggle = document.querySelector(".nav-toggle");
+const mobileNavLinks = document.querySelector(".nav-links");
+
+if (navToggle && mobileNavLinks) {
+  navToggle.addEventListener("click", () => {
+    const isOpen = mobileNavLinks.classList.toggle("is-open");
+    navToggle.classList.toggle("is-active");
+    navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+  });
+
+  mobileNavLinks.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      mobileNavLinks.classList.remove("is-open");
+      navToggle.classList.remove("is-active");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  document.addEventListener("click", (event) => {
+    const isNav = event.target.closest("#navbar");
+    if (!isNav && mobileNavLinks.classList.contains("is-open")) {
+      mobileNavLinks.classList.remove("is-open");
+      navToggle.classList.remove("is-active");
+      navToggle.setAttribute("aria-expanded", "false");
+    }
+  });
+}
+
+
+/* ---------------------------------------------
+   Contact form (mailto)
+--------------------------------------------- */
+const contactForm = document.getElementById("contactForm");
+const formFeedback = document.getElementById("formFeedback");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const name = document.getElementById("formName").value.trim();
+    const email = document.getElementById("formEmail").value.trim();
+    const message = document.getElementById("formMessage").value.trim();
+
+    if (!name || !email || !message) {
+      formFeedback.textContent = "Please fill in all fields.";
+      formFeedback.className = "contact-form-feedback is-error";
+      return;
+    }
+
+    const subject = encodeURIComponent(`Portfolio Message from ${name}`);
+    const body = encodeURIComponent(
+      `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+
+    window.location.href = `mailto:jbprado013@gmail.com?subject=${subject}&body=${body}`;
+
+    formFeedback.textContent = "Thank you! Your message has been prepared.";
+    formFeedback.className = "contact-form-feedback is-success";
+    contactForm.reset();
+  });
+}
