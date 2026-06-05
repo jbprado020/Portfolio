@@ -79,6 +79,25 @@ if (navSections.length) {
 
 
 /* ---------------------------------------------
+   Back to top
+--------------------------------------------- */
+const backToTop = document.getElementById("backToTop");
+
+if (backToTop) {
+  const toggleBackToTop = () => {
+    backToTop.classList.toggle("is-visible", window.scrollY > 500);
+  };
+
+  toggleBackToTop();
+  window.addEventListener("scroll", toggleBackToTop);
+
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: reducedMotion ? "instant" : "smooth" });
+  });
+}
+
+
+/* ---------------------------------------------
    Scroll reveal
 --------------------------------------------- */
 const revealElements = document.querySelectorAll(".reveal");
@@ -128,7 +147,7 @@ const resolveRevealDirection = (element) => {
 --------------------------------------------- */
 if (canHover && !reducedMotion) {
   const interactiveCards = document.querySelectorAll(
-    ".tool-band, .project-card, .cert-card"
+    ".tool-band, .project-card, .cert-card, .stat-item"
   );
 
   interactiveCards.forEach((card) => {

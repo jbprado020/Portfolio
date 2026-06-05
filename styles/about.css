@@ -74,6 +74,11 @@
 }
 
 #about .stat-item {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  --fx-x: 50%;
+  --fx-y: 0%;
   padding: 1.4rem 1.45rem;
   border: 1px solid var(--line);
   border-radius: var(--radius-md);
@@ -83,6 +88,32 @@
   transition: border-color 220ms var(--ease-standard),
               background-color 220ms var(--ease-standard),
               transform 220ms var(--ease-standard);
+}
+
+#about .stat-item::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateY(4px);
+  background:
+    radial-gradient(240px 200px at var(--fx-x) var(--fx-y), rgba(167, 121, 74, 0.22), rgba(167, 121, 74, 0) 82%),
+    linear-gradient(rgba(167, 121, 74, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(167, 121, 74, 0.08) 1px, transparent 1px);
+  background-size: auto, 30px 30px, 30px 30px;
+  background-position: center, 0 0, 0 0;
+  will-change: opacity, transform, background-position;
+  transition: opacity 260ms var(--ease-standard),
+              transform 260ms var(--ease-standard),
+              background-position 420ms var(--ease-standard);
+}
+
+#about .stat-item > * {
+  position: relative;
+  z-index: 2;
 }
 
 #about .stat-num {

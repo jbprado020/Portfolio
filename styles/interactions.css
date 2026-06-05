@@ -56,4 +56,11 @@
     border-color: rgba(167, 121, 74, 0.42);
     background: var(--surface-hover);
   }
+
+  #about .stat-item:hover::after {
+    opacity: 0.7;
+    transform: translateY(0);
+    background-position: center, 10px 12px, -10px -12px;
+    animation: cardGridDrift 7.2s linear infinite;
+  }
 }
