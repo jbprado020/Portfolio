@@ -135,7 +135,10 @@ const resolveRevealDirection = (element) => {
   }
 
   if (sectionId === "certifications") {
-    return "reveal-right";
+    const revealInCert = Array.from(section.querySelectorAll(".reveal"));
+    const certIndex = revealInCert.indexOf(element);
+    const dirs = ["reveal-left", "reveal-scale", "reveal-right", "reveal-up"];
+    return dirs[certIndex % dirs.length];
   }
 
   return "reveal-up";
@@ -475,7 +478,7 @@ if (contactForm) {
       `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`
     );
 
-    window.location.href = `mailto:jbprado013@gmail.com?subject=${subject}&body=${body}`;
+    window.open(`mailto:jbprado013@gmail.com?subject=${subject}&body=${body}`, "_blank");
 
     formFeedback.textContent = "Thank you! Your message has been prepared.";
     formFeedback.className = "contact-form-feedback is-success";

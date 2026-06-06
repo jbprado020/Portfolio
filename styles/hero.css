@@ -68,8 +68,6 @@
   text-transform: uppercase;
   opacity: 0;
   animation: fadeUp 620ms var(--ease-standard) forwards 140ms;
-  transition: text-align 700ms var(--ease-standard),
-              align-self 700ms var(--ease-standard);
 }
 
 /* ---------------------------------------------
