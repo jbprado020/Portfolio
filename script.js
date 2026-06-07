@@ -317,6 +317,30 @@ if (reducedMotion) {
 }
 
 /* ---------------------------------------------
+   Skill bar reveal
+--------------------------------------------- */
+const skillBars = document.querySelectorAll(".tool-chip-bar");
+
+if (skillBars.length && !reducedMotion) {
+  const barObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.3 }
+  );
+
+  skillBars.forEach((bar) => barObserver.observe(bar));
+} else if (skillBars.length) {
+  skillBars.forEach((bar) => bar.classList.add("is-visible"));
+}
+
+
+/* ---------------------------------------------
    Hero split animation — triggers after 2.5s
 --------------------------------------------- */
 const heroSplit = document.getElementById("heroSplit");

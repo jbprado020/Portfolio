@@ -197,6 +197,8 @@
 }
 
 .tool-chip {
+  position: relative;
+  overflow: hidden;
   display: inline-flex;
   align-items: center;
   gap: 0.42rem;
@@ -204,7 +206,7 @@
   border-radius: 999px;
   background: #ffffff;
   color: var(--text);
-  padding: 0.4rem 0.72rem;
+  padding: 0.4rem 0.72rem 0.42rem;
   font-family: var(--font-mono);
   font-size: 0.63rem;
   letter-spacing: 0.08em;
@@ -213,6 +215,21 @@
               border-color var(--motion-fast) var(--ease-standard),
               background-color var(--motion-fast) var(--ease-standard),
               color var(--motion-fast) var(--ease-standard);
+}
+
+.tool-chip-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--accent);
+  width: 0;
+  transition: width 900ms var(--ease-standard);
+}
+
+.tool-chip-bar.is-visible {
+  width: calc(var(--level) * 1%);
 }
 
 .tool-chip i {
