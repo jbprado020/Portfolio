@@ -79,6 +79,24 @@ if (navSections.length) {
 
 
 /* ---------------------------------------------
+   Reading progress bar
+--------------------------------------------- */
+const readingProgress = document.getElementById("readingProgress");
+
+if (readingProgress) {
+  const updateReadingProgress = () => {
+    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    const ratio = scrollable > 0 ? Math.min(Math.max(window.scrollY / scrollable, 0), 1) : 0;
+    readingProgress.style.width = `${ratio * 100}%`;
+  };
+
+  updateReadingProgress();
+  window.addEventListener("scroll", updateReadingProgress);
+  window.addEventListener("resize", updateReadingProgress);
+}
+
+
+/* ---------------------------------------------
    Back to top
 --------------------------------------------- */
 const backToTop = document.getElementById("backToTop");

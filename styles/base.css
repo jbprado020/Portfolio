@@ -472,6 +472,22 @@ nav.over-dark .nav-toggle:hover .nav-toggle-bar {
 
 
 /* ---------------------------------------------
+   Reading Progress Bar
+--------------------------------------------- */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1001;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-soft));
+  transition: width 60ms linear;
+  pointer-events: none;
+}
+
+
+/* ---------------------------------------------
    Back to Top
 --------------------------------------------- */
 .back-to-top {
