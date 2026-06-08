@@ -52,6 +52,12 @@
     background: rgba(167, 121, 74, 0.07);
   }
 
+  .learning-chip:hover {
+    transform: translateY(var(--lift-md));
+    border-color: rgba(47, 154, 99, 0.32);
+    box-shadow: 0 12px 26px rgba(47, 154, 99, 0.1);
+  }
+
   #about .stat-item:hover {
     border-color: rgba(167, 121, 74, 0.42);
     background: var(--surface-hover);

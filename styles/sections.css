@@ -250,6 +250,111 @@
 
 
 /* ---------------------------------------------
+   Currently Learning
+--------------------------------------------- */
+#learning {
+  background: rgba(247, 249, 252, 0.5);
+  border-top: 1px solid var(--line);
+}
+
+#learning .section-inner {
+  padding-top: 4.8rem;
+  padding-bottom: 4.8rem;
+}
+
+#learning .section-label {
+  color: var(--success);
+}
+
+#learning .section-label::after {
+  background: rgba(47, 154, 99, 0.35);
+}
+
+.learning-layout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.learning-intro {
+  flex: 0 0 auto;
+}
+
+.learning-intro .section-title {
+  margin-bottom: 0.65rem;
+}
+
+.learning-desc {
+  color: var(--muted);
+  font-size: var(--type-body);
+  line-height: 1.8;
+  max-width: 38ch;
+}
+
+.learning-chips {
+  display: flex;
+  gap: 0.85rem;
+  flex-shrink: 0;
+}
+
+.learning-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.72rem;
+  padding: 0.85rem 1.15rem;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: 0 8px 22px rgba(27, 34, 45, 0.06);
+  transition: transform 220ms var(--ease-standard),
+              border-color 220ms var(--ease-standard),
+              box-shadow 220ms var(--ease-standard);
+}
+
+.learning-chip i {
+  font-size: 1.45rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.learning-chip-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.learning-chip-name {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text);
+}
+
+.learning-chip-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--success);
+}
+
+.learning-chip-status::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--success);
+  animation: pulse 2s ease infinite;
+}
+
+
+/* ---------------------------------------------
    Projects
 --------------------------------------------- */
 .projects-grid {
