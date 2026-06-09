@@ -317,6 +317,26 @@ if (reducedMotion) {
 }
 
 /* ---------------------------------------------
+   Section divider reveal
+--------------------------------------------- */
+const sectionDivs = document.querySelectorAll("section[id]");
+if (sectionDivs.length) {
+  const sectionObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("sect-visible");
+          sectionObserver.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.08 }
+  );
+  sectionDivs.forEach((section) => sectionObserver.observe(section));
+}
+
+
+/* ---------------------------------------------
    Skill bar reveal
 --------------------------------------------- */
 const skillBars = document.querySelectorAll(".tool-chip-bar");

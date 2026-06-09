@@ -438,6 +438,13 @@ nav.over-dark .nav-toggle:hover .nav-toggle-bar {
   width: 64px;
   height: 1px;
   background: rgba(167, 121, 74, 0.35);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 560ms var(--ease-standard);
+}
+
+section.sect-visible .section-label::after {
+  transform: scaleX(1);
 }
 
 .section-title {
