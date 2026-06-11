@@ -173,6 +173,20 @@
     display: none;
   }
 
+  html.dark-mode .nav-links a {
+    border-color: rgba(200, 208, 219, 0.15);
+    background: rgba(30, 34, 43, 0.8);
+  }
+
+  html.dark-mode nav.over-dark .nav-links a {
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  html.dark-mode .nav-links {
+    border-top-color: var(--line);
+  }
+
   .hero {
     min-height: auto;
     padding-top: 7.15rem;

@@ -79,6 +79,49 @@ if (navSections.length) {
 
 
 /* ---------------------------------------------
+   Theme toggle (dark mode)
+--------------------------------------------- */
+const themeToggle = document.getElementById("themeToggle");
+const htmlEl = document.documentElement;
+const STORAGE_KEY = "portfolio-theme";
+
+const getPreferredTheme = () => {
+  const stored = localStorage.getItem(STORAGE_KEY);
+  if (stored) return stored;
+  if (window.matchMedia("(prefers-color-scheme: dark)").matches) return "dark";
+  return "light";
+};
+
+const applyTheme = (theme) => {
+  const isDark = theme === "dark";
+  htmlEl.classList.toggle("dark-mode", isDark);
+  if (themeToggle) {
+    themeToggle.innerHTML = isDark
+      ? '<i class="fa-regular fa-sun" aria-hidden="true"></i>'
+      : '<i class="fa-regular fa-moon" aria-hidden="true"></i>';
+    themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
+  }
+};
+
+const currentTheme = getPreferredTheme();
+applyTheme(currentTheme);
+
+if (themeToggle) {
+  themeToggle.addEventListener("click", () => {
+    const next = htmlEl.classList.contains("dark-mode") ? "light" : "dark";
+    localStorage.setItem(STORAGE_KEY, next);
+    applyTheme(next);
+  });
+}
+
+window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
+  if (!localStorage.getItem(STORAGE_KEY)) {
+    applyTheme(event.matches ? "dark" : "light");
+  }
+});
+
+
+/* ---------------------------------------------
    Reading progress bar
 --------------------------------------------- */
 const readingProgress = document.getElementById("readingProgress");
