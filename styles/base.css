@@ -175,6 +175,29 @@ html.dark-mode .contact-link {
   border-color: rgba(200, 208, 219, 0.1);
 }
 
+html.dark-mode .contact-link-val--clickable:hover {
+  color: var(--accent);
+}
+
+html.dark-mode .copy-btn {
+  border-color: rgba(200, 208, 219, 0.15);
+}
+
+html.dark-mode .copy-btn:hover {
+  border-color: rgba(201, 151, 95, 0.35);
+  background: rgba(201, 151, 95, 0.1);
+}
+
+html.dark-mode .copy-btn.is-copied {
+  border-color: rgba(58, 176, 116, 0.35);
+  background: rgba(58, 176, 116, 0.1);
+}
+
+html.dark-mode .copy-btn-tooltip {
+  background: var(--text);
+  color: var(--bg);
+}
+
 html.dark-mode .contact-availability {
   background: rgba(30, 34, 43, 0.85);
   border-color: rgba(200, 208, 219, 0.1);

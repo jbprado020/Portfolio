@@ -590,3 +590,46 @@ if (contactForm) {
     contactForm.reset();
   });
 }
+
+
+/* ---------------------------------------------
+   Copy email to clipboard
+--------------------------------------------- */
+const copyBtn = document.getElementById("copyEmailBtn");
+const EMAIL = "jbprado013@gmail.com";
+
+if (copyBtn) {
+  const tooltip = document.createElement("span");
+  tooltip.className = "copy-btn-tooltip";
+  tooltip.textContent = "Copied!";
+  copyBtn.parentElement.appendChild(tooltip);
+
+  copyBtn.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      copyBtn.classList.add("is-copied");
+      tooltip.classList.add("is-visible");
+
+      window.setTimeout(() => {
+        copyBtn.classList.remove("is-copied");
+        tooltip.classList.remove("is-visible");
+      }, 1800);
+    } catch {
+      const textarea = document.createElement("textarea");
+      textarea.value = EMAIL;
+      textarea.style.position = "fixed";
+      textarea.style.opacity = "0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand("copy");
+      document.body.removeChild(textarea);
+      copyBtn.classList.add("is-copied");
+      tooltip.classList.add("is-visible");
+
+      window.setTimeout(() => {
+        copyBtn.classList.remove("is-copied");
+        tooltip.classList.remove("is-visible");
+      }, 1800);
+    }
+  });
+}

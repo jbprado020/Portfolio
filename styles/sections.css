@@ -959,6 +959,86 @@
   color: var(--text);
 }
 
+.contact-link--email {
+  position: relative;
+}
+
+.contact-link-val--clickable {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-color: rgba(167, 121, 74, 0.3);
+  color: var(--text);
+  transition: text-decoration-color 200ms var(--ease-standard),
+              color 200ms var(--ease-standard);
+}
+
+.contact-link-val--clickable:hover {
+  color: var(--accent);
+  text-decoration-color: rgba(167, 121, 74, 0.7);
+}
+
+.copy-btn {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 0.82rem;
+  cursor: pointer;
+  margin-left: auto;
+  transition: color 200ms var(--ease-standard),
+              border-color 200ms var(--ease-standard),
+              background 200ms var(--ease-standard),
+              transform 200ms var(--ease-standard);
+}
+
+.copy-btn:hover {
+  color: var(--accent);
+  border-color: rgba(167, 121, 74, 0.42);
+  background: rgba(167, 121, 74, 0.08);
+  transform: translateY(var(--lift-sm));
+}
+
+.copy-btn:focus-visible {
+  outline: 2px solid rgba(167, 121, 74, 0.9);
+  outline-offset: 2px;
+}
+
+.copy-btn.is-copied {
+  color: var(--success);
+  border-color: rgba(47, 154, 99, 0.42);
+  background: rgba(47, 154, 99, 0.08);
+}
+
+.copy-btn-tooltip {
+  position: absolute;
+  bottom: calc(100% + 6px);
+  right: 0;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  background: var(--text);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 0.55rem;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(4px);
+  pointer-events: none;
+  transition: opacity 200ms var(--ease-standard),
+              transform 200ms var(--ease-standard);
+}
+
+.copy-btn-tooltip.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .contact-availability {
   background:
     radial-gradient(240px 120px at 82% 12%, rgba(167, 121, 74, 0.12), rgba(167, 121, 74, 0) 72%),
