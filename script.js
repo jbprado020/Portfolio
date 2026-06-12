@@ -111,6 +111,11 @@ if (themeToggle) {
     const next = htmlEl.classList.contains("dark-mode") ? "light" : "dark";
     localStorage.setItem(STORAGE_KEY, next);
     applyTheme(next);
+
+    themeToggle.classList.add("is-animating");
+    themeToggle.addEventListener("animationend", () => {
+      themeToggle.classList.remove("is-animating");
+    }, { once: true });
   });
 }
 

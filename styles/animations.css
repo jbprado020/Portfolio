@@ -57,6 +57,11 @@
   50% { opacity: 0; }
 }
 
+@keyframes themeSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 .reveal {
   --reveal-x: 0px;
   --reveal-y: 18px;
