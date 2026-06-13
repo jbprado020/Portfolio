@@ -280,6 +280,12 @@ html.dark-mode footer {
 /* ---------------------------------------------
    Theme Toggle
 --------------------------------------------- */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
 .theme-toggle {
   display: flex;
   align-items: center;
