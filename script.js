@@ -327,6 +327,73 @@ if (toolsFilterButtons.length && toolBands.length) {
   applyToolsFilter("all");
 }
 
+/* ---------------------------------------------
+   Project filtering
+--------------------------------------------- */
+const projectFilterButtons = Array.from(document.querySelectorAll(".project-filter-btn"));
+const projectCards = Array.from(document.querySelectorAll(".project-card[data-project-category]"));
+
+if (projectFilterButtons.length && projectCards.length) {
+  const setActiveProjectFilterButton = (activeFilter) => {
+    projectFilterButtons.forEach((button) => {
+      const isActive = button.dataset.projectFilter === activeFilter;
+      button.classList.toggle("is-active", isActive);
+      button.setAttribute("aria-pressed", isActive ? "true" : "false");
+    });
+  };
+
+  const applyProjectFilter = (filterKey) => {
+    const filterHideDurationMs = reducedMotion ? 0 : 260;
+    const filterStaggerMs = reducedMotion ? 0 : 60;
+
+    projectCards.forEach((card, index) => {
+      const category = card.dataset.projectCategory;
+      const shouldShow = filterKey === "all" || category === filterKey;
+      const staggerDelay = `${index * filterStaggerMs}ms`;
+
+      if (shouldShow) {
+        card.hidden = false;
+        card.classList.remove("is-filter-out");
+        card.style.removeProperty("--tools-stagger");
+
+        if (!reducedMotion) {
+          card.classList.add("is-filter-out");
+          void card.offsetWidth;
+          window.requestAnimationFrame(() => {
+            card.classList.remove("is-filter-out");
+            card.style.setProperty("--tools-stagger", staggerDelay);
+          });
+        }
+      } else {
+        if (reducedMotion) {
+          card.hidden = true;
+          return;
+        }
+
+        card.classList.add("is-filter-out");
+        card.style.setProperty("--tools-stagger", staggerDelay);
+
+        window.setTimeout(() => {
+          card.hidden = true;
+        }, filterHideDurationMs + (index * filterStaggerMs));
+      }
+    });
+  };
+
+  projectFilterButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const filterKey = button.dataset.projectFilter;
+      if (!filterKey) return;
+
+      setActiveProjectFilterButton(filterKey);
+      applyProjectFilter(filterKey);
+    });
+  });
+
+  setActiveProjectFilterButton("all");
+  applyProjectFilter("all");
+}
+
 if (reducedMotion) {
   revealElements.forEach((element) => element.classList.add("visible"));
 } else {

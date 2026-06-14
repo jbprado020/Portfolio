@@ -331,8 +331,14 @@
     font-size: 0.88rem;
   }
 
-  .tools-filters {
+  .tools-filters,
+  .project-filters {
     gap: 0.45rem;
+  }
+
+  .project-filter-btn {
+    padding: 0.36rem 0.66rem;
+    font-size: 0.59rem;
   }
 
   .learning-chips {

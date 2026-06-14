@@ -368,6 +368,43 @@
   max-width: 56%;
 }
 
+.project-filters {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 1.6rem;
+}
+
+.project-filter-btn {
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: #ffffff;
+  color: var(--muted);
+  padding: 0.4rem 0.78rem;
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: transform var(--motion-fast) var(--ease-standard),
+              color var(--motion-fast) var(--ease-standard),
+              border-color var(--motion-fast) var(--ease-standard),
+              background-color var(--motion-fast) var(--ease-standard),
+              box-shadow var(--motion-fast) var(--ease-standard);
+}
+
+.project-filter-btn:focus-visible {
+  transform: translateY(var(--lift-sm));
+}
+
+.project-filter-btn.is-active {
+  color: var(--accent);
+  border-color: rgba(167, 121, 74, 0.52);
+  background: rgba(167, 121, 74, 0.1);
+  box-shadow: 0 6px 14px rgba(167, 121, 74, 0.14);
+}
+
 .project-card {
   position: relative;
   isolation: isolate;
@@ -379,9 +416,17 @@
   border-radius: var(--radius-md);
   padding: 2.2rem;
   box-shadow: 0 12px 30px rgba(27, 34, 45, 0.08);
-  transition: transform var(--motion-base) var(--ease-standard),
+  transition: opacity var(--motion-base) var(--ease-standard),
+              transform var(--motion-base) var(--ease-standard),
               border-color var(--motion-base) var(--ease-standard),
               background-color var(--motion-base) var(--ease-standard);
+  transition-delay: var(--tools-stagger, 0ms);
+}
+
+.project-card.is-filter-out {
+  opacity: 0;
+  transform: translateY(14px) scale(0.975);
+  pointer-events: none;
 }
 
 .project-card::before {

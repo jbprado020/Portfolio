@@ -273,8 +273,12 @@
     <div class="section-inner">
       <div class="section-label">03 — Projects</div>
       <h2 class="section-title reveal">Things I've Built</h2>
+      <div class="project-filters reveal" role="toolbar" aria-label="Filter projects by language">
+        <button type="button" class="project-filter-btn is-active" data-project-filter="all" aria-pressed="true">All</button>
+        <button type="button" class="project-filter-btn" data-project-filter="python" aria-pressed="false">Python</button>
+      </div>
       <div class="projects-grid">
-        <div class="project-card reveal" data-project-theme="passbirvae">
+        <div class="project-card reveal" data-project-theme="passbirvae" data-project-category="python">
           <div class="project-media" aria-hidden="true">
             <span class="project-media-label">Cryptography Simulation</span>
           </div>
@@ -300,7 +304,7 @@
           </div>
         </div>
 
-        <div class="project-card reveal" data-project-theme="tracker">
+        <div class="project-card reveal" data-project-theme="tracker" data-project-category="python">
           <div class="project-media" aria-hidden="true">
             <span class="project-media-label">Study Analytics GUI</span>
           </div>
@@ -327,7 +331,7 @@
           </div>
         </div>
 
-        <div class="project-card reveal" data-project-theme="rpg">
+        <div class="project-card reveal" data-project-theme="rpg" data-project-category="python">
           <div class="project-media" aria-hidden="true">
             <span class="project-media-label">Turn-Based Combat Engine</span>
           </div>

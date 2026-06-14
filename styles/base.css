@@ -225,7 +225,15 @@ html.dark-mode .tools-filter-btn {
   color: var(--muted);
 }
 
-html.dark-mode .tools-filter-btn.is-active {
+html.dark-mode .tools-filter-btn,
+html.dark-mode .project-filter-btn {
+  background: rgba(30, 34, 43, 0.5);
+  border-color: rgba(200, 208, 219, 0.12);
+  color: var(--muted);
+}
+
+html.dark-mode .tools-filter-btn.is-active,
+html.dark-mode .project-filter-btn.is-active {
   background: rgba(201, 151, 95, 0.12);
   border-color: rgba(201, 151, 95, 0.35);
   color: var(--accent);
@@ -559,6 +567,7 @@ nav.scrolled {
 .btn:focus-visible,
 .project-link:focus-visible,
 .tools-filter-btn:focus-visible,
+.project-filter-btn:focus-visible,
 .scroll-rail-dot:focus-visible {
   box-shadow: 0 0 0 3px rgba(167, 121, 74, 0.18);
 }
