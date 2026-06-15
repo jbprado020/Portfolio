@@ -61,7 +61,7 @@
 
   <div class="reading-progress" id="readingProgress" aria-hidden="true"></div>
 
-  <a class="skip-link" href="#home">Skip to content</a>
+  <a class="skip-link" href="#about">Skip to content</a>
 
   <!-- NAV -->
   <nav id="navbar">
@@ -390,7 +390,7 @@
       <h2 class="section-title reveal">Credentials</h2>
       <div class="cert-grid">
 
-        <div class="cert-card cert-card--featured reveal">
+        <div class="cert-card cert-card--featured reveal" tabindex="0" role="button">
           <div class="cert-image">
             <img src="Screenshot 2026-06-03 191348.png" alt="IT Specialist Java certificate" loading="lazy" />
           </div>
@@ -419,7 +419,7 @@
           </div>
         </div>
 
-        <div class="cert-card cert-card--featured reveal">
+        <div class="cert-card cert-card--featured reveal" tabindex="0" role="button">
           <div class="cert-image">
             <img src="Screenshot 2026-06-03 191410.png" alt="IT Specialist Databases certificate" loading="lazy" />
           </div>
@@ -545,7 +545,7 @@
   </footer>
 
   <!-- CERT MODAL -->
-  <div class="cert-modal" id="certModal" role="dialog" aria-modal="true" aria-label="Certificate details">
+  <div class="cert-modal" id="certModal" role="dialog" aria-modal="true" aria-labelledby="certModalTitle">
     <div class="cert-modal-overlay"></div>
     <div class="cert-modal-wrap">
       <button class="cert-modal-close" aria-label="Close modal">&times;</button>
@@ -553,7 +553,7 @@
         <div class="cert-modal-image"></div>
         <div class="cert-modal-info">
           <div class="cert-modal-header"></div>
-          <h3 class="cert-modal-title"></h3>
+          <h3 class="cert-modal-title" id="certModalTitle"></h3>
           <p class="cert-modal-desc"></p>
           <div class="cert-modal-meta"></div>
           <div class="cert-modal-tags"></div>

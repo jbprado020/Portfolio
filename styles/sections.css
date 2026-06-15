@@ -1228,7 +1228,7 @@ footer p {
   justify-content: center;
   position: fixed;
   inset: 0;
-  z-index: 1000;
+  z-index: 2000;
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s 420ms, opacity 420ms var(--ease-standard);

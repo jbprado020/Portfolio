@@ -533,8 +533,31 @@ if (certModal) {
   const modalDesc = certModal.querySelector(".cert-modal-desc");
   const modalMeta = certModal.querySelector(".cert-modal-meta");
   const modalTags = certModal.querySelector(".cert-modal-tags");
+  let lastFocused = null;
+
+  const focusableElements = () =>
+    certModal.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+
+  const trapFocus = (event) => {
+    const els = focusableElements();
+    if (els.length === 0) return;
+    const first = els[0];
+    const last = els[els.length - 1];
+    if (event.key === "Tab") {
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  };
 
   const openModal = (card) => {
+    lastFocused = document.activeElement;
     const img = card.querySelector(".cert-image img");
     if (img) {
       modalImage.innerHTML = `<img src="${img.src}" alt="${img.alt}" />`;
@@ -576,15 +599,28 @@ if (certModal) {
 
     certModal.classList.add("is-open");
     document.body.classList.add("modal-open");
+    modalClose.focus();
+    certModal.addEventListener("keydown", trapFocus);
   };
 
   const closeModal = () => {
     certModal.classList.remove("is-open");
     document.body.classList.remove("modal-open");
+    certModal.removeEventListener("keydown", trapFocus);
+    if (lastFocused) {
+      lastFocused.focus();
+      lastFocused = null;
+    }
   };
 
   document.querySelectorAll(".cert-card--featured").forEach((card) => {
     card.addEventListener("click", () => openModal(card));
+    card.addEventListener("keydown", (event) => {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openModal(card);
+      }
+    });
   });
 
   modalClose.addEventListener("click", closeModal);
