@@ -2,7 +2,6 @@
    About
 --------------------------------------------- */
 #about {
-  border-top: 1px solid var(--line);
   background: linear-gradient(180deg, rgba(247, 249, 252, 0.95) 0%, rgba(242, 245, 249, 0.92) 100%);
 }
 

@@ -237,17 +237,6 @@
   line-height: 1;
 }
 
-@keyframes toolBandFilterIn {
-  from {
-    opacity: 0;
-    transform: translateY(8px) scale(0.988);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
-}
-
 
 /* ---------------------------------------------
    Currently Learning
@@ -623,18 +612,6 @@
 
 .project-actions .project-link {
   margin-top: 0;
-}
-
-.project-link-disabled {
-  border-style: dashed;
-  color: rgba(89, 98, 115, 0.84);
-  background: rgba(167, 121, 74, 0.04);
-  cursor: default;
-  opacity: 0.92;
-}
-
-.project-link-disabled:focus-visible {
-  box-shadow: none;
 }
 
 .project-link:hover {

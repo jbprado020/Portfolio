@@ -67,8 +67,7 @@
     justify-self: start;
   }
 
-  .projects-grid,
-  .skills-grid {
+  .projects-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -197,12 +196,6 @@
     border-top-color: var(--line);
   }
 
-  .hero {
-    min-height: auto;
-    padding-top: 7.15rem;
-    padding-bottom: 4.8rem;
-    align-items: stretch;
-  }
 
   .hero-stage {
     align-items: stretch;
@@ -297,13 +290,12 @@
     gap: 0.55rem;
   }
 
-  .about-stat-item {
-    padding: 0.9rem 0.7rem;
-  }
 
   .hero {
+    min-height: auto;
     padding-top: 6rem;
     padding-bottom: 3.6rem;
+    align-items: stretch;
   }
 
   footer {
@@ -322,8 +314,7 @@
     grid-template-columns: 1fr;
   }
 
-  .projects-grid,
-  .skills-grid {
+  .projects-grid {
     grid-template-columns: 1fr;
   }
 

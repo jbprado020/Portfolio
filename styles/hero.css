@@ -169,10 +169,6 @@
   text-shadow: none;
 }
 
-.hero-name-top::after {
-  display: none;
-}
-
 .hero-name-mid {
   position: relative;
   display: inline-flex;
