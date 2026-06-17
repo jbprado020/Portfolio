@@ -94,6 +94,7 @@ const getPreferredTheme = () => {
 
 const applyTheme = (theme) => {
   const isDark = theme === "dark";
+  htmlEl.classList.add("theme-transitioning");
   htmlEl.classList.toggle("dark-mode", isDark);
   if (themeToggle) {
     themeToggle.innerHTML = isDark
@@ -101,6 +102,9 @@ const applyTheme = (theme) => {
       : '<i class="fa-regular fa-moon" aria-hidden="true"></i>';
     themeToggle.setAttribute("aria-label", isDark ? "Switch to light mode" : "Switch to dark mode");
   }
+  window.setTimeout(() => {
+    htmlEl.classList.remove("theme-transitioning");
+  }, 400);
 };
 
 const currentTheme = getPreferredTheme();

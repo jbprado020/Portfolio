@@ -1,6 +1,15 @@
 /* ---------------------------------------------
    Root + Base
 --------------------------------------------- */
+html.theme-transitioning,
+html.theme-transitioning *,
+html.theme-transitioning *::before,
+html.theme-transitioning *::after {
+  transition: background-color 400ms ease,
+              color 400ms ease,
+              border-color 400ms ease !important;
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   margin: 0;
