@@ -404,6 +404,115 @@
   }
 }
 
+@media (max-width: 380px) {
+  nav {
+    padding: 0.45rem 0.65rem;
+  }
+
+  .nav-logo {
+    font-size: 0.5rem;
+  }
+
+  .theme-toggle {
+    width: 26px;
+    height: 26px;
+    font-size: 0.75rem;
+  }
+
+  .hero {
+    padding-top: 4.8rem;
+    padding-bottom: 2.8rem;
+  }
+
+  .hero-name-top {
+    font-size: clamp(2.2rem, 14vw, 2.95rem);
+  }
+
+  .hero-name-mid {
+    font-size: clamp(0.85rem, 5vw, 1.1rem);
+  }
+
+  .hero-role {
+    font-size: 0.52rem;
+  }
+
+  .hero-bio {
+    font-size: 0.84rem;
+    margin-top: 0.9rem;
+  }
+
+  .section-inner {
+    padding-top: 2.8rem;
+    padding-bottom: 2.8rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
+  }
+
+  .project-card,
+  .cert-card {
+    padding: 0.95rem;
+  }
+
+  .project-media {
+    margin: -0.95rem -0.95rem 0.65rem;
+    height: 82px;
+  }
+
+  .cert-image {
+    margin: -0.95rem -0.95rem 0.65rem;
+  }
+
+  .project-title {
+    font-size: 0.85rem;
+  }
+
+  .project-desc {
+    font-size: 0.78rem;
+  }
+
+  .project-actions .project-link {
+    font-size: 0.52rem;
+    padding: 0.38rem 0.6rem;
+  }
+
+  .contact-form {
+    padding: 0.95rem;
+  }
+
+  .contact-links a {
+    padding: 0.55rem 0.65rem;
+    font-size: 0.7rem;
+  }
+
+  .tool-band {
+    padding: 0.85rem 0.75rem 0.8rem;
+  }
+
+  .section-label {
+    font-size: 0.48rem;
+  }
+
+  .stat-item {
+    padding: 0.7rem 0.5rem;
+  }
+
+  .stat-item .stat-num {
+    font-size: 1.3rem;
+  }
+
+  .stat-item .stat-label {
+    font-size: 0.55rem;
+  }
+
+  .section-title {
+    margin-bottom: 1.2rem;
+  }
+
+  footer {
+    padding: 0.85rem 0.65rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
