@@ -320,8 +320,7 @@ html.dark-mode footer {
 }
 
 .theme-toggle:focus-visible {
-  outline: 2px solid rgba(167, 121, 74, 0.9);
-  outline-offset: 3px;
+  box-shadow: 0 0 0 2px rgba(167, 121, 74, 0.9);
 }
 
 .theme-toggle.is-animating i {
@@ -572,6 +571,7 @@ nav.scrolled {
 .tools-filter-btn:focus-visible,
 .project-filter-btn:focus-visible,
 .scroll-rail-dot:focus-visible {
+  outline: none;
   box-shadow: 0 0 0 3px rgba(167, 121, 74, 0.18);
 }
 
@@ -628,8 +628,7 @@ nav.scrolled {
 }
 
 .nav-toggle:focus-visible {
-  outline: 2px solid rgba(167, 121, 74, 0.9);
-  outline-offset: 3px;
+  box-shadow: 0 0 0 2px rgba(167, 121, 74, 0.9);
 }
 
 .nav-toggle-bar {
@@ -842,6 +841,5 @@ section.sect-visible .section-label::after {
 }
 
 .back-to-top:focus-visible {
-  outline: 2px solid rgba(167, 121, 74, 0.9);
-  outline-offset: 3px;
+  box-shadow: 0 0 0 2px rgba(167, 121, 74, 0.9);
 }
