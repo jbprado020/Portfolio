@@ -2,6 +2,11 @@
    Responsive
 --------------------------------------------- */
 @media (max-width: 1024px) {
+  nav {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
   .scroll-rail {
     display: none;
   }
