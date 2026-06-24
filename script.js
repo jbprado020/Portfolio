@@ -45,13 +45,17 @@ const setActiveNav = (sectionId) => {
   });
 };
 
+const getScrollRatio = () => {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  return scrollable > 0 ? Math.min(Math.max(window.scrollY / scrollable, 0), 1) : 0;
+};
+
 const setScrollRailProgress = () => {
   if (!railProgress) {
     return;
   }
 
-  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-  const ratio = scrollable > 0 ? Math.min(Math.max(window.scrollY / scrollable, 0), 1) : 0;
+  const ratio = getScrollRatio();
   railProgress.style.transform = `scaleY(${ratio.toFixed(4)})`;
 };
 
@@ -137,8 +141,7 @@ const readingProgress = document.getElementById("readingProgress");
 
 if (readingProgress) {
   const updateReadingProgress = () => {
-    const scrollable = document.documentElement.scrollHeight - window.innerHeight;
-    const ratio = scrollable > 0 ? Math.min(Math.max(window.scrollY / scrollable, 0), 1) : 0;
+    const ratio = getScrollRatio();
     readingProgress.style.width = `${ratio * 100}%`;
   };
 
