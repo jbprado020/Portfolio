@@ -89,10 +89,6 @@
     grid-template-columns: 1fr;
   }
 
-  .tools-filters {
-    margin-top: 0.95rem;
-  }
-
   .tool-band:nth-child(1),
   .tool-band:nth-child(2),
   .tool-band:nth-child(3) {
@@ -327,16 +323,6 @@
     font-size: 0.88rem;
   }
 
-  .tools-filters,
-  .project-filters {
-    gap: 0.45rem;
-  }
-
-  .project-filter-btn {
-    padding: 0.36rem 0.66rem;
-    font-size: 0.59rem;
-  }
-
   .learning-chips {
     flex-wrap: wrap;
     gap: 0.65rem;
@@ -344,11 +330,6 @@
 
   .learning-chip {
     flex: 1 1 100%;
-  }
-
-  .tools-filter-btn {
-    padding: 0.36rem 0.66rem;
-    font-size: 0.59rem;
   }
 
   .tool-band {
