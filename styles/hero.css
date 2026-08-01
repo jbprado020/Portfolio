@@ -23,7 +23,6 @@
 }
 
 /* After split — align bottom content left without moving the split container */
-.hero-stage.split-done .hero-tag,
 .hero-stage.split-done .hero-role,
 .hero-stage.split-done .hero-bio {
   text-align: left;
