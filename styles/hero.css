@@ -66,8 +66,6 @@
   font-size: 0.66rem;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  opacity: 0;
-  animation: fadeUp 760ms var(--ease-standard) forwards 260ms;
 }
 
 /* ---------------------------------------------
